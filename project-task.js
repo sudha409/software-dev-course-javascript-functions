@@ -31,7 +31,6 @@ This activity reinforces:
 // ============================================
 // ❌ Original Code (Before Refactoring)
 // ============================================
-
 // Script 1 - Greeting multiple users
 console.log("Welcome, Alice!");
 console.log("Welcome, Bob!");
@@ -53,6 +52,7 @@ for (let i = 0; i < names.length; i++) {
     console.log(names[i]);
 }
 
+
 /*
 ===========================================
 🛠️ Steps for Refactoring
@@ -72,3 +72,40 @@ for (let i = 0; i < names.length; i++) {
 */
 
 // ✅ Your refactored code goes below this line!
+
+// Script 1 - Greeting multiple users
+
+function greeting(name){
+   console.log("welcome "+name);
+}
+
+greeting("Alice!");
+greeting("Bob!");
+greeting("Charlie!");
+
+
+// Script 2 - Sum calculation
+let num3 = 5, num4 = 10;
+
+function addition(firstNum,secondNum){
+   return   firstNum + secondNum ;
+}
+console.log("The sum of 5 and 10 is using function " + addition(num3,num4));
+
+function miltiplication(firstNum,secondNum){
+   return firstNum*secondNum;
+}
+// Script 3 - Product calculation
+console.log("The product of 5 and 10 is using function "+ miltiplication(num3,num4));
+
+
+// Script 4 - Print names from a list
+function studentName(names){
+    
+for(let i=0;i<names.length;i++){
+   console.log(names[i]);
+}
+}
+
+let studentNames = ["Alice", "Bob", "Charlie"];
+studentName(studentNames);
