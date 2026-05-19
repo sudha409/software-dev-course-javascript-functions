@@ -36,6 +36,22 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. Capitalize the role if needed.
 // 4. Return the result.
 
+function generateBadge(name, role, email) {
+    const formattedName = name[0].toUpperCase() + name.slice(1).toLowerCase();
+    const formattedRole = role[0].toUpperCase() + role.slice(1).toLowerCase();
+    let badge = `Name: ${formattedName}, Role: ${formattedRole}`;
+    if (validateEmail(email)) badge += ", Email: " + email;
+    return badge;
+}
+
+console.log(generateBadge("Jhon", "Student")); // Name: Jhon, Role: Student
+console.log(generateBadge("jhoN", "stuDent")); // Name: Jhon, Role: Student
+console.log(generateBadge("jhoN", "stuDent", "realemail@email.com")); // Name: Jhon, Role: Student, Email: realemail@email.com
+console.log(generateBadge("jhoN", "stuDent", "fakeemailatemail.com")); // Name: Jhon, Role: Student
+
+
+
+
 
 // ============================================
 // 🧩 Task 2: Calculate Event Cost
@@ -51,6 +67,16 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. If so, apply a 10% discount.
 // 4. Return the final total.
 
+// costPerAttendee is in dollars
+function calculateEventCost(numOfAttendees, costPerAttendee) {
+    let totalCost = numOfAttendees * costPerAttendee;
+    if (numOfAttendees > 100) totalCost *= 0.9;
+    return totalCost;
+}
+
+console.log(calculateEventCost(20, 10)); // Should be 200 total
+console.log(calculateEventCost(200, 10)); // Should be 1800 total
+
 
 // ============================================
 // 🧩 Task 3: Validate Email
@@ -63,6 +89,16 @@ reusable functions that solve specific tasks. This activity encourages:
 // Steps:
 // 1. Check if the string includes both "@" and ".".
 // 2. Return true or false accordingly.
+
+// Returns true if email exists, includes "@" and includes "."
+function validateEmail(email) {
+    return email && email.includes("@") && email.includes(".");
+}
+
+console.log(validateEmail("realemail@email.com")); // true
+console.log(validateEmail("fakeemail@emaildotcom")); // false
+console.log(validateEmail("fakeemailatemaildot.com")); // false
+console.log(validateEmail("fakeemailatemaildotcom")); // false
 
 
 // ============================================
